@@ -1,0 +1,14 @@
+version: '2'
+services:
+  l2tp:
+    image: hwdsl2/ipsec-vpn-server
+    ports:
+      - 500:500/udp
+      - 4500:4500/udp
+    environment:
+      VPN_IPSEC_PSK: happy1314
+      VPN_USER: axf
+      VPN_PASSWORD: happy1314
+    volumes:
+      - /lib/modules:/lib/modules:ro
+    privileged: true
